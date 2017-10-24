@@ -14,6 +14,8 @@
 Auth::routes();
 
 Route::get('/', 'Frontend\HomeController@index')->name('frontend.home');
+Route::get('lists', 'Frontend\HomeController@listsMy');
+
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
     Route::get('/', 'Admin\AdminHomeController@show')->name('admin.home');

@@ -11,8 +11,11 @@ class HomeController extends Controller
     public function index() {
         $posts = Posts::all();
 
-        return view('frontend.home', [
-            'posts' => $posts
-        ]);
+        return view('layouts.frontend');
+    }
+    public function listsMy() {
+        $posts = Posts::all();
+
+        return response()->json($posts);
     }
 }
